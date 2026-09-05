@@ -1,0 +1,483 @@
+/* CORES */
+:root {
+    --card: #fffaf0;
+
+    --ink: #432b1f;
+    --muted: #715544;
+
+    --border: #d8c1a8;
+
+    --accent: #944923;
+    --accent-dark: #66321d;
+
+    --secondary: #ecd9bf;
+    --secondary-hover: #dfc2a1;
+
+    --danger: #b33a3a;
+    --danger-bg: #fbeaea;
+
+    --ok: #47744b;
+    --ok-bg: #edf6ed;
+}
+
+
+/*Configurações gerais */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+    margin: 0;
+
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 35px 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+
+
+    background-image: url(../fundo.png);
+}
+
+
+/*card principal*/
+
+.card {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 620px;
+
+    margin: auto;
+
+    padding: 42px 46px;
+
+    background: rgba(255, 250, 240, 0.97);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    /*
+       Camadas atrás do card
+       para lembrar páginas de um livro
+    */
+
+    box-shadow:
+        6px 6px 0 #8a542f,
+        12px 12px 0 #d6ae7c,
+        0 22px 45px rgba(35, 20, 10, 0.38);
+}
+
+
+/* Card maior da página de listagem */
+
+.card.wide {
+    max-width: 800px;
+}
+
+
+/*título*/
+h1 {
+    margin: 0 0 16px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 2.7rem;
+
+    color: var(--ink);
+
+    line-height: 1.1;
+}
+
+
+h1 .brand {
+    color: var(--accent);
+}
+
+
+/* Linha embaixo do título */
+h1::after {
+    content: "";
+
+    display: block;
+
+    width: 100px;
+
+    height: 3px;
+
+    margin-top: 18px;
+
+    background: #bc865e;
+
+    border-radius: 5px;
+}
+
+
+/* subtítulo */
+p.subtitle {
+    margin: 0 0 30px;
+
+    color: var(--muted);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* Botões*/
+
+.actions {
+    display: flex;
+
+    gap: 14px;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+}
+
+
+button {
+    padding: 13px 22px;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    border: 1px solid transparent;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.15s ease,
+        box-shadow 0.2s ease;
+}
+
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+
+button:active {
+    transform: scale(0.98);
+}
+
+
+/* botão cadastrar */
+
+.btn-primary {
+    background: var(--accent);
+
+    color: white;
+
+    border-color: var(--accent);
+
+    box-shadow:
+        0 5px 12px rgba(95, 47, 25, 0.25);
+}
+
+
+.btn-primary:hover {
+    background: var(--accent-dark);
+
+    border-color: var(--accent-dark);
+}
+
+
+/* botão listar */
+
+.btn-secondary {
+    background: var(--secondary);
+
+    color: var(--accent);
+
+    border-color: #d1ad87;
+}
+
+
+.btn-secondary:hover {
+    background: var(--secondary-hover);
+}
+
+
+/* botão voltar */
+
+.btn-outline {
+    background: transparent;
+
+    color: var(--muted);
+
+    border: 1px solid #cdbba7;
+}
+
+
+.btn-outline:hover {
+    background: #f3e7d8;
+
+    color: var(--accent);
+}
+
+
+/* FORMULÁRIOS*/
+
+form {
+    width: 100%;
+}
+
+
+form label {
+    display: block;
+
+    margin: 17px 0 7px;
+
+    color: var(--muted);
+
+    font-size: 13.5px;
+
+    font-weight: 600;
+}
+
+
+form label:first-of-type {
+    margin-top: 0;
+}
+
+
+form input {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    background: #fffdf8;
+
+    color: var(--ink);
+
+    border: 1px solid #ccb59a;
+
+    border-radius: 7px;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+form input:focus {
+    outline: none;
+
+    background: #ffffff;
+
+    border-color: var(--accent);
+
+    box-shadow:
+        0 0 0 3px rgba(148, 73, 35, 0.15);
+}
+
+
+.form-actions {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 25px;
+
+    flex-wrap: wrap;
+}
+
+
+/* mensagens*/
+
+#mensagem {
+    display: none;
+
+    margin-top: 18px;
+
+    padding: 12px 14px;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+}
+
+
+#mensagem.sucesso {
+    display: block;
+
+    background: var(--ok-bg);
+
+    color: var(--ok);
+
+    border: 1px solid var(--ok);
+}
+
+
+#mensagem.erro {
+    display: block;
+
+    background: var(--danger-bg);
+
+    color: var(--danger);
+
+    border: 1px solid var(--danger);
+}
+
+
+/* tabela*/
+
+table {
+    width: 100%;
+
+    margin-top: 22px;
+
+    border-collapse: collapse;
+
+    background: #fffdf8;
+
+    font-size: 14.5px;
+
+    border-radius: 7px;
+
+    overflow: hidden;
+}
+
+
+th,
+td {
+    padding: 12px 13px;
+
+    text-align: left;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+th {
+    background: var(--accent);
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.05em;
+}
+
+
+tbody tr:nth-child(even) {
+    background: #f7ede2;
+}
+
+
+tbody tr:hover {
+    background: #ead4bc;
+}
+
+
+/* estado da listagem*/
+
+#estadoLista {
+    margin-top: 15px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* responsividade*/
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 25px 15px;
+
+        background-position: center;
+
+        background-attachment: scroll;
+    }
+
+
+    .card {
+        max-width: 100%;
+
+        padding: 30px 25px;
+
+        box-shadow:
+            4px 4px 0 #8a542f,
+            8px 8px 0 #d6ae7c,
+            0 15px 30px rgba(35, 20, 10, 0.30);
+    }
+
+
+    .card.wide {
+        max-width: 100%;
+    }
+
+
+    h1 {
+        font-size: 2.1rem;
+    }
+
+
+    .actions,
+    .form-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    button {
+        width: 100%;
+    }
+
+
+    table {
+        font-size: 13px;
+    }
+
+
+    th,
+    td {
+        padding: 9px 7px;
+    }
+}
