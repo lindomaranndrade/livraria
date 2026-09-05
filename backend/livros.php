@@ -46,3 +46,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
+
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    $sql = "SELECT id, titulo, autor, editora, ano FROM livros";
+    try {
+        $stmt = $conexao->prepare($sql);
+        $stmt->execute();
+
+        $livros = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        header("Content-Type: application/json");
+        echo json_encode($livros);
+    } catch (PDOException $e) {
+        echo "Erro ao consultar os livros: " . $e->getMessage();
+    }
+}
