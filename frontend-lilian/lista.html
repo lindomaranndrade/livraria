@@ -1,45 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
 
+    <title>Biblioteca</title>
+  </head>
 
-  <title>lista</title>
-</head>
-<body>
-  
-  <div class="card">
+  <body>
+    <div class="card">
+      <h1>
+        <span class="brand">LIVRARIA</span>
+      </h1>
 
-    <h1><span class="brand">LIVRARIA</span></h1>
+      <p class="subtitle">
+        Organize sua biblioteca de forma simples. Cadastre novos livros e
+        consulte sua coleção sempre que quiser.
+      </p>
 
-    <p class="subtitle">
-        Organize sua biblioteca de forma simples.
-        Cadastre novos livros e consulte sua coleção sempre que quiser.
-    </p>
+      <p id="estadoLista"></p>
 
-    <div class="actions">
+      <table id="tabelaLivros">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Editora</th>
+            <th>Ano</th>
+          </tr>
+        </thead>
 
+        <tbody></tbody>
+      </table>
+
+      <div class="actions">
         <button
-            id="btnCadastrar"
-            class="btn-primary"
-            onclick="window.location.href='cadastro.html'">
-
-            Cadastrar livro
+          id="btnCadastrar"
+          class="btn-primary"
+          onclick="window.location.href = 'cadastro.html'"
+        >
+          Cadastrar livro
         </button>
 
         <button
-            id="btnListar"
-            class="btn-secondary"
-            onclick="window.location.href='lista.html'">
-
-            Ver biblioteca
+          id="btnListar"
+          class="btn-secondary"
+          onclick="window.location.href = 'lista.html'"
+        >
+          Atualizar biblioteca
         </button>
-
+      </div>
     </div>
 
-</div>
-</body>
+    <script src="js/lista.js"></script>
+  </body>
 </html>
-

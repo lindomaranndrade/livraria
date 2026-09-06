@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const corpoTabela = document.querySelector("#tabelaLivros tbody");
   const estado = document.getElementById("estadoLista");
 
-  fetch("backend/livros.php")
+  fetch("../backend/livros.php")
     .then(function (resposta) {
       return resposta.json();
     })
@@ -20,17 +20,28 @@ document.addEventListener("DOMContentLoaded", function () {
       livros.forEach(function (livro) {
         const linha = document.createElement("tr");
         linha.innerHTML =
-          "<td>" + livro.id + "</td>" +
-          "<td>" + livro.titulo + "</td>" +
-          "<td>" + livro.autor + "</td>" +
-          "<td>" + livro.editora + "</td>" +
-          "<td>" + livro.ano + "</td>";
+          "<td>" +
+          livro.id +
+          "</td>" +
+          "<td>" +
+          livro.titulo +
+          "</td>" +
+          "<td>" +
+          livro.autor +
+          "</td>" +
+          "<td>" +
+          livro.editora +
+          "</td>" +
+          "<td>" +
+          livro.ano +
+          "</td>";
         corpoTabela.appendChild(linha);
       });
 
       estado.textContent = "";
     })
     .catch(function () {
-      estado.textContent = "Não foi possível carregar os livros. Verifique se o backend está rodando.";
+      estado.textContent =
+        "Não foi possível carregar os livros. Verifique se o backend está rodando.";
     });
 });
